@@ -1,0 +1,17 @@
+[Unit]
+Description=Strikaris Chain -- author node relay
+After=network.target
+
+[Service]
+ExecStart=/opt/chain/venv/bin/python /opt/chain/author.py
+WorkingDirectory=/opt/chain
+Restart=on-failure
+User=chain
+Environment=RELAY_REMOTE=your-chain-remote
+Environment=RELAY_INTERVAL=300
+Environment=RELAY_SKIP_AGENTS=your-private-agent
+Environment=FORGE_CONTAINER=mirroros-forge-1
+Environment=CONTAINER_DB=/app/mrs/memory/reasoning.db
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+[Unit]
+Description=Strikaris Chain -- integrity auditor
+After=chain.service
+
+[Service]
+ExecStart=/opt/chain/venv/bin/python /opt/chain/auditor.py
+WorkingDirectory=/opt/chain
+Restart=on-failure
+User=chain
+Environment=CHAIN_URL=http://127.0.0.1:7333
+Environment=CHAIN_DB=/opt/chain/data/chain.db
+Environment=AUDITOR_INTERVAL=300
+Environment=ANCHOR_LOG=/opt/chain/data/chain_anchor.log
+Environment=SILENCE_LIMIT=600
+
+[Install]
+WantedBy=multi-user.target

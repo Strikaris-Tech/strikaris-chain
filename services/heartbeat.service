@@ -1,0 +1,15 @@
+[Unit]
+Description=Strikaris Chain -- heartbeat ticker
+After=chain.service
+
+[Service]
+ExecStart=/opt/chain/venv/bin/python /opt/chain/heartbeat.py
+WorkingDirectory=/opt/chain
+Restart=on-failure
+User=chain
+Environment=CHAIN_URL=http://127.0.0.1:7333
+Environment=HEARTBEAT_INTERVAL=60
+Environment=HEARTBEAT_AGENT=heartbeat
+
+[Install]
+WantedBy=multi-user.target

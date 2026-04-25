@@ -1,0 +1,14 @@
+[Unit]
+Description=Strikaris Chain -- hash-chained ledger node
+After=network.target
+
+[Service]
+ExecStart=/opt/chain/venv/bin/uvicorn chain:app --host 127.0.0.1 --port 7333
+WorkingDirectory=/opt/chain
+Restart=on-failure
+User=chain
+Environment=CHAIN_DB=/opt/chain/data/chain.db
+Environment=FAILOVER_AFTER_SEC=900
+
+[Install]
+WantedBy=multi-user.target
