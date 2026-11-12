@@ -1,7 +1,6 @@
 # Provenance — server-deployed programs backfilled 2026-10-23
 
-These two programs run in production on strikaris-prime (EC2, us-east-1) but were
-never committed to any repository. They were captured read-only on 2026-10-23 via
+These two programs run in production but were never committed to any repository. They were captured read-only on 2026-10-23 via
 AWS Systems Manager Run Command (gzip + base64 transfer) and verified
 byte-identical against the live files by SHA-256 before commit. The live files
 remain the running copies; from this commit forward, this repository is the
@@ -13,7 +12,7 @@ canonical source (repo-first rule: change here, then deploy).
 - Role: the strikaris-chain mirror node behind verify.strikaris.com —
   POST /pulse, GET /chain/status, GET /chain/block/{query},
   GET /chain/verify/{from}/{to}, POST /relay/batch (localhost-only Pi intake).
-- Author: Brandon Lee Zeek ("TheArchitect"). Deployed directly to the server;
+- Author: Brandon Lee Zeek. Deployed directly to the server;
   no .git checkout existed on the server, and org-wide + GitHub-global
   fingerprint searches on 2026-10-23 found this code in no repository.
 

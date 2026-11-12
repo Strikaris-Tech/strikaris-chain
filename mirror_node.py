@@ -267,7 +267,7 @@ async def relay_batch(rows: list[RelayRow]):
     Accepts a batch of raw log rows from the Pi architect_node relay.
     Inserts each into the local chain with EC2 hash chaining.
     Updates last_pi_relay_ts so the status badge reflects Pi liveness.
-    Called via: ssh strikaris-prime 'curl ... http://127.0.0.1:7333/relay/batch'
+    Called via: ssh <chain-host> 'curl ... http://127.0.0.1:7333/relay/batch'
     """
     if not rows:
         return {"relayed": 0}

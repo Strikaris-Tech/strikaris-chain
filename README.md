@@ -163,5 +163,4 @@ sudo systemctl start chain heartbeat auditor
 
 ## Live Example
 
-[verify.strikaris.com](https://verify.strikaris.com) runs this stack.
-Source for the verification UI: [strikaris-site](https://github.com/Strikaris-Tech/strikaris-site)
+[verify.strikaris.com](https://verify.strikaris.com) runs this stack, including the verification UI.
