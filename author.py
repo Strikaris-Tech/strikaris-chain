@@ -6,7 +6,7 @@ Runs as a daemon on the author machine (Pi, workstation, etc.).
 Every RELAY_INTERVAL seconds:
   1. Copy the source DB out of the forge container (docker cp)
   2. Read new rows since last_relayed_id
-  3. Filter out personal entries (SKIP_AGENTS)
+  3. Filter out excluded agents (SKIP_AGENTS)
   4. POST batch to remote chain node via SSH tunnel
 
 The relay path:

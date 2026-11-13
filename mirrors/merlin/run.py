@@ -70,7 +70,7 @@ SCHEDULE: list[dict] = [
 # start_hour inclusive, end_hour exclusive (24h local time)
 TIME_WINDOWS: list[dict] = [
     {
-        "mirror_id":  "zeek",
+        "mirror_id":  "merlin",
         "job_id":     "slack_holder",
         "days":       "weekdays",
         "start_hour": 8,
